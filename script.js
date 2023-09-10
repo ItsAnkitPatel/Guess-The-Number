@@ -30,7 +30,7 @@ document.querySelector("#subt").addEventListener("click", (e) => {
         document.querySelector(".lowOrHi").innerHTML = "Your number is high";
       }
 
-      guesses.innerHTML += `${guessedNum.value} `;
+      guesses.innerHTML += `${(chances===10)?guessedNum.value: ', '+guessedNum.value} `;
 
       document.querySelector("#lastResult").innerText = `${--chances}`;
 
