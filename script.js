@@ -2,8 +2,7 @@ const guessedNum = document.querySelector("#guessField");
 let chances = 10;
 const msg = document.querySelector("#message");
 const guesses = document.querySelector(".guesses");
-const max = 100,
-  min = 1;
+
 
 document.querySelector("#subt").addEventListener("click", (e) => {
   e.preventDefault();
@@ -19,8 +18,8 @@ document.querySelector("#subt").addEventListener("click", (e) => {
     }
 
     if (chances >= 1) {
-      const range = Math.floor(Math.random()*(max-min+1)) + min
-
+      const range = Math.floor(Math.random()*(100+1))
+      
       if (range === val) {
         removeElements("win");
       } else if (val < range) {
