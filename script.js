@@ -1,7 +1,6 @@
 const guessedNum = document.querySelector("#guessField");
 let chances = 10;
 const msg = document.querySelector("#message");
-const prevGuess = [];
 const guesses = document.querySelector(".guesses");
 const max = 100,
   min = 1;
