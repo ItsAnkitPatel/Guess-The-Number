@@ -20,7 +20,7 @@ document.querySelector("#subt").addEventListener("click", (e) => {
     }
 
     if (chances >= 1) {
-      const range = Math.floor(Math.random() * max - min + 1 - min);
+      const range = Math.floor(Math.random()*(max-min+1)) + min
 
       if (range === val) {
         removeElements("win");
