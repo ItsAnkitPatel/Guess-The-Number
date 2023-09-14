@@ -4,10 +4,12 @@ const msg = document.querySelector("#message");
 const guesses = document.querySelector(".guesses");
 const range = Math.floor(Math.random() * (100 + 1));
 
+console.log(range);
 document.querySelector("#subt").addEventListener("click", (e) => {
   e.preventDefault();
-  let val = parseInt(guessedNum.value);
-
+  const val = parseInt(guessedNum.value);
+  guessedNum.value ='';
+  //validation
   if (isNaN(val)) {
     msg.innerHTML = "Enter a valid numeric number";
   } else if (val > 100 || val < 1) {
@@ -18,7 +20,6 @@ document.querySelector("#subt").addEventListener("click", (e) => {
     }
 
     if (chances >= 1) {
-      
       if (range === val) {
         removeElements("win");
       } else if (val < range) {
@@ -27,7 +28,7 @@ document.querySelector("#subt").addEventListener("click", (e) => {
         document.querySelector(".lowOrHi").innerHTML = "Your number is high";
       }
 
-      guesses.innerHTML += `${(chances===10)?guessedNum.value: ', '+guessedNum.value} `;
+      guesses.innerHTML += `${chances !== 10 ?  ", " + val : val } `;
 
       document.querySelector("#lastResult").innerText = `${--chances}`;
 
@@ -64,6 +65,7 @@ function removeElements(text) {
     h2.innerHTML = "GAME OVER !🫥";
   }
 }
+
 
 function reloadPage() {
   location.reload();
